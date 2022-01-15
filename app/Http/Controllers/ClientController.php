@@ -6,6 +6,9 @@ use App\Models\Client;
 use App\Http\Requests\StoreClientRequest;
 use App\Http\Requests\UpdateClientRequest;
 
+use Illuminate\Http\Request;
+
+
 class ClientController extends Controller
 {
     /**
@@ -15,7 +18,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        $clients = Client::all();
+        return view('client.index',['clients' => $clients]);
     }
 
     /**
@@ -25,7 +29,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.create');
+
     }
 
     /**
@@ -34,9 +39,20 @@ class ClientController extends Controller
      * @param  \App\Http\Requests\StoreClientRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreClientRequest $request)
+    public function store(Request $request)
     {
-        //
+        $client = new Client;
+
+        $client->name = $request->client_name;
+        $client->surname = $request->client_surname;
+        $client->username = $request->client_username;
+        $client->company_id = $request->client_company_id;
+        $client->image_url = $request->client_image_url;
+        
+        $client->save();
+
+        return redirect()->route('client.index');
+        
     }
 
     /**
@@ -47,7 +63,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return view('clients.show', ['client'=> $client]);
     }
 
     /**
@@ -57,8 +73,11 @@ class ClientController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Client $client)
-    {
-        //
+    {   
+        // $client = 1
+        // $client = {id: 1, name: ..., surname: ...}
+        return view('clients.edit',['client' => $client]);
+
     }
 
     /**
@@ -68,9 +87,19 @@ class ClientController extends Controller
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateClientRequest $request, Client $client)
+    public function update(Request $request, Client $client)
     {
-        //
+        //pasiimu is lauku, ir irasau i duomenu baze
+
+        $client->name = $request->client_name;
+        $client->surname = $request->client_surname;
+        $client->username = $request->client_username;
+        $client->company_id = $request->client_company_id;
+        $client->image_url = $request->client_image_url;
+
+        $client->save();//UPDATE
+
+        return redirect()->route('client.index');
     }
 
     /**
@@ -81,6 +110,7 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        $client->delete();
+        return redirect()->route('client.index');
     }
 }

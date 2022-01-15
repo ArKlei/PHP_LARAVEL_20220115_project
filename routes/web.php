@@ -38,6 +38,7 @@ Route::get('/', function () {
     //Show
     Route::get('show/{client}', 'App\Http\Controllers\ClientController@show')->name('client.show');
 
+  });
 
     //Objektų klasė Companies
     Route::prefix('companies')->group(function() {
