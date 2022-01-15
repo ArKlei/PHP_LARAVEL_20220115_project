@@ -10,14 +10,23 @@
 </head>
 <body>
     <div class="container">
-    <<p>h1>Edit client's data</h1>
+    <p><h1>Edit client's data</h1>
 
     <form method='POST' action='{{route('client.update', [$client])}}' >
 
         Name: <input class="form-control" type='text' name="client_name" value='{{$client->name}}'/>
         Surname: <input class="form-control" type='text' name="client_surname" value='{{$client->surname}}'/>
         Username: <input class="form-control" type='text' name="client_username" value='{{$client->username}}'/>
-        Company_ID: <input class="form-control" type='number' name="client_company_id" value='{{$client->company_id}}'/>
+        Company_ID: 
+         <select class="form-control" name="client_company_id" value=''>
+                    <option class="text-secondary" value="{{$client->company_id}}">
+                        {{$client->company_id}}
+                    @for ($i = 1; $i < 251; $i++)
+                        
+                        <option value="{{ $i }}">{{$i}}</option> 
+                    
+                    @endfor
+                    
         Image address (url): <input class="form-control" type='text' name="client_image_url" value='{{$client->image_url}}'/>
         @csrf
         <button class="btn btn-primary" type='submit'>Update</button>

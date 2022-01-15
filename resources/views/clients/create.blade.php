@@ -12,12 +12,20 @@
     <div class="container">
         <p><h1>Add client</h1>
 
-        <form method='POST' action='{{route('client.store')}}' >
+        <form method='POST' action='{{route('client.store')}}'>
 
             <input class="form-control" type='text' name="client_name" placeholder="Client Name"/>
             <input  class="form-control" type='text' name="client_surname" placeholder="Client Surname"/>
             <input  class="form-control" type='text' name="client_username" placeholder="Client Username"/>
-            <input  class="form-control" type='number' name="client_company_id" placeholder="Company ID"/>
+            <select class="form-control" name="client_company_id">
+                    <option value="0" class="text-secondary" style="grey">Company ID</option>
+                    @for ($i = 1; $i < 251; $i++)
+                        
+                        <option value="{{ $i }}">{{$i}}</option> 
+                    
+                    @endfor
+                    
+            </select>
             <input  class="form-control" type='text' name="client_image_url" placeholder="Image address (url)"/>
             @csrf
 
