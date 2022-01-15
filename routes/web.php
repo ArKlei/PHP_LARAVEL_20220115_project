@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 //Pavienis kelias
 Route::get('/', function () {
     return view('welcome');
-  });
+  })->name('main');
   
   //Objektų klasė Clients
   Route::prefix('clients')->group(function() {
