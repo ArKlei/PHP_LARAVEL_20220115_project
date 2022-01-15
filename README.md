@@ -25,4 +25,7 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 19. Routes> web.php sukuriame route grupę objektų klasėms Clients ir Companies, kiekvienoje nurodant route'us visiems metodams: create, store, edit, update, show, destroy.
 20. Svarbu nurodyti vardus kaip "->name('modelioPavadinimasVienaskaita.metodas') - pvz. ->name('client.create'), kad nereiktų nurodyti ilgo kontrolerio kelio, pvz. 'App\Http\Controllers\ClientController@create'.
 21. Metodams kai duomenys siunčiami į duomenų bazę ir yra saugiau, naudojamas metodas GET (Laravel standartas), kai gaunami iš jos - POST.
+22. Pasitikrinti ar pabaigoje neišsitrynė )};
+23. Tai parodytų paleistas php artisan migrate:fresh - klaidą ParseError ir "{", kad atidaryta, bet neuždaryta apačioje. Pakartoti ir įsitikinti, kad nėra errorų.
+ POST.
 
