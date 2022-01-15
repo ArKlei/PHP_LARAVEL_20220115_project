@@ -58,3 +58,5 @@ Route::get('/', function () {
         
         //Show
         Route::get('show/{company}', 'App\Http\Controllers\CompanyController@show')->name('company.show');
+
+    });
