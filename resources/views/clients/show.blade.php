@@ -20,7 +20,7 @@
 
         <form method="post" action='{{route('client.destroy', [$client])}}'>
             @csrf
-            <button class="btn btn-danger" type="submit">Delete</button>
+            <button class="btn btn-danger" type="submit">Delete client from database</button>
         </form>
         <a class="btn btn-secondary" href="{{route('client.index')}}">Back</a>
     </div>

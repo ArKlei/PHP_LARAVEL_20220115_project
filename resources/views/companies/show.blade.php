@@ -17,7 +17,7 @@
 
         <form method="post" action='{{route('company.destroy', [$company])}}'>
             @csrf
-            <button class="btn btn-danger" type="submit">Delete</button>
+            <button class="btn btn-danger" type="submit">Delete company from database</button>
         </form>
         <a class="btn btn-secondary" href="{{route('company.index')}}">Back</a>
     </div>
