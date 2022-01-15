@@ -38,6 +38,7 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 31. Sukurti inputus create.blade.php vaizduose.
 32. Sukurti edit vaizduose input'us ir patikrinti controlleriuose tą pačią request'ų problemą - 30 punktas
 33. Sukurti atvaizdavimą iš duomenų bazės index.blade.php bylose. Svarbu atkreipti dėmesį į daugiskaitos rašymą, pvz. companIEs, kad nesigautų companYs. Be to, raidžių supainiojimas vietomis, pvz comapny
+34. Sukurti show.blade.php vaizdus atvaizuoti konkrečius klientus ir kompanijas. Svarbu atkreipti dėmesį ar duomenų bazėje yra nors vienas įrašas, kitaip rodys 404.
 
 
 
