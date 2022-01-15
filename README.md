@@ -32,7 +32,7 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 25. Svarbu nesupainioti daugiskaitų su vienaskaitomis ir atsižvelgti kaip vienaskaitą laravel pats keičia į daugiskaitą ir kaip pats rašai.
 26. Svarbu kad savybės, jeigu kopijuojamos užklausos iš kitų projektų, atitiktų lentelių stulpelius ir pavadinimus.
 27. Atlikti php artisan migrate:fresh pasitikrinti klaidas
-28. 28. Controller'yje svarbu nesupainioti vienskaitos su daugiskaita, pvz., return view('companies.index',['companies' => $companies]);. Prieš index eina daugiskaita, taip kaip užvadintas views aplankalas modeliui. 
+28. Controller'yje svarbu nesupainioti vienskaitos su daugiskaita, pvz., return view('companies.index',['companies' => $companies]);. Prieš index eina daugiskaita, taip kaip užvadintas views aplankalas modeliui. 
 29. Atlikti php artisan migrate:fresh pasitikrinti klaidas
 
 
