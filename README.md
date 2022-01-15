@@ -22,4 +22,7 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 16. Per PhPMyAdmin patikrinti ar duomenų bazės (projekto pavadinimas) lentelės (pavadinimai atitinka sukurtus modelius) atsirado stulpeliai su užduotais pavadinimais ir duomenų tipais "Schema" metode.
 17. Sukurti Public>Resources>Views aplankus naujų modelių/Objektų klasių vaizdams. Šiuo atveju "clients" ir "companies". Daugiskaita, nes modelius sukurė kaip daugiaskaitas!
 18. Aplankuose sukurti vaizdus su galūne "blade.php" - Laravel standartas, negalima keisti. Šiuo atveju objektų atvaizdavimui, kūrimui, redagavimui: index.balde.php, create.blade.php ir edit.blade.php" kiekvienai iš klasių/modelių jų aplankuose.
+19. Routes> web.php sukuriame route grupę objektų klasėms Clients ir Companies, kiekvienoje nurodant route'us visiems metodams: create, store, edit, update, show, destroy.
+20. Svarbu nurodyti vardus kaip "->name('modelioPavadinimasVienaskaita.metodas') - pvz. ->name('client.create'), kad nereiktų nurodyti ilgo kontrolerio kelio, pvz. 'App\Http\Controllers\ClientController@create'.
+21. Metodams kai duomenys siunčiami į duomenų bazę ir yra saugiau, naudojamas metodas GET (Laravel standartas), kai gaunami iš jos - POST.
 
