@@ -34,9 +34,10 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 27. Atlikti php artisan migrate:fresh pasitikrinti klaidas
 28. Controller'yje svarbu nesupainioti vienskaitos su daugiskaita, pvz., return view('companies.index',['companies' => $companies]);. Prieš index eina daugiskaita, taip kaip užvadintas views aplankalas modeliui. 
 29. Atlikti php artisan migrate:fresh pasitikrinti klaidas
-30. 30. Controlleriuose prie store nesuveikia StoreRequestCompany, tada išimti StoreRequest dalį ir viršuje įkelti biblioteką use ... Request
+30. Controlleriuose prie store nesuveikia StoreRequestCompany, tada išimti StoreRequest dalį ir viršuje įkelti biblioteką use ... Request
 31. Sukurti inputus create.blade.php vaizduose.
 32. Sukurti edit vaizduose input'us ir patikrinti controlleriuose tą pačią request'ų problemą - 30 punktas
+33. Sukurti atvaizdavimą iš duomenų bazės index.blade.php bylose. Svarbu atkreipti dėmesį į daugiskaitos rašymą, pvz. companIEs, kad nesigautų companYs. Be to, raidžių supainiojimas vietomis, pvz comapny
 
 
 
