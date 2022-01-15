@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Add client</h1>
+        <p><h1>Add client</h1>
 
         <form method='POST' action='{{route('client.store')}}' >
 

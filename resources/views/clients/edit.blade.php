@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-    <h1>Edit client's data</h1>
+    <<p>h1>Edit client's data</h1>
 
     <form method='POST' action='{{route('client.update', [$client])}}' >
 
