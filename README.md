@@ -36,6 +36,8 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 29. Atlikti php artisan migrate:fresh pasitikrinti klaidas
 30. 30. Controlleriuose prie store nesuveikia StoreRequestCompany, tada išimti StoreRequest dalį ir viršuje įkelti biblioteką use ... Request
 31. Sukurti inputus create.blade.php vaizduose.
+32. Sukurti edit vaizduose input'us ir patikrinti controlleriuose tą pačią request'ų problemą - 30 punktas
+
 
 
 
