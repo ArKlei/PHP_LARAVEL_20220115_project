@@ -34,7 +34,7 @@ class CompanyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCompanyRequest  $request
+     * @param  \App\Http\Requests\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -77,11 +77,11 @@ class CompanyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCompanyRequest  $request
+     * @param  \App\Http\Requests\Request  $request
      * @param  \App\Models\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCompanyRequest $request, Company $company)
+    public function update(Request $request, Company $company)
     {
         //pasiimu is lauku, ir irasau i duomenu baze
 
