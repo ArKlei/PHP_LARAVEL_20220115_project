@@ -28,7 +28,7 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 20. Pasitikrinti ar pabaigoje neišsitrynė ")};" ir tai turi uždaryti kiekvieno modelio kodo dalį!
 21. Tai parodytų paleistas php artisan migrate:fresh - klaidą ParseError ir "{", kad atidaryta, bet neuždaryta apačioje. Pakartoti ir įsitikinti, kad nėra errorų.
 ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
-22. Sukurti Public>Resources>Views aplankus naujų modelių/Objektų klasių vaizdams. Šiuo atveju "clients" ir "companies". Daugiskaita, nes modelius sukurė kaip daugiaskaitas! Galima vieno modelio blade failus nukopijuoti 5 kito modelio aplnak1, nes vistiek jie identi6ki: create, edit, show, index...  
+22. Sukurti Public>Resources>Views aplankus naujų modelių/Objektų klasių vaizdams. Šiuo atveju "clients" ir "companies". Daugiskaita, nes modelius sukurė kaip daugiaskaitas! Galima vieno modelio blade failus nukopijuoti į kito modelio aplnaką, nes vistiek jie identiški: create, edit, show, index...  
 23. Aplankuose sukurti vaizdus su galūne "blade.php" - Laravel standartas, negalima keisti. Šiuo atveju objektų atvaizdavimui, kūrimui, redagavimui: index.balde.php, create.blade.php ir edit.blade.php" kiekvienai iš klasių/modelių jų aplankuose.
 ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
 24. App>Http>Controllers aplanko sukurtų modelių/objektų klasių controller'iuose surašyti standartiniuose Laravel metoduose nuorodas į vaizdus (return redirect()->route('modelis.vaizdo_paskirtis'), pvz.  return redirect()->route('client.index'). Taip pat, užklausas į/iš duomenų bazės lentelių pagal objektinio programavimo principus $this->savybė, pvz. $client(klasės objektas)->name(objekto savybė) = $request (duok)->client(klasė)->name(savybė).
