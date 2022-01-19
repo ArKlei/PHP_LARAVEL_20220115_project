@@ -32,7 +32,7 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 23. Aplankuose sukurti vaizdus su galūne "blade.php" - Laravel standartas, negalima keisti. Šiuo atveju objektų atvaizdavimui, kūrimui, redagavimui: index.balde.php, create.blade.php ir edit.blade.php" kiekvienai iš klasių/modelių jų aplankuose.
 ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
 24. App>Http>Controllers aplanko sukurtų modelių/objektų klasių controller'iuose surašyti standartiniuose Laravel metoduose nuorodas į vaizdus (return redirect()->route('modelis.vaizdo_paskirtis'), pvz.  return redirect()->route('client.index'). Taip pat, užklausas į/iš duomenų bazės lentelių pagal objektinio programavimo principus $this->savybė, pvz. $client(klasės objektas)->name(objekto savybė) = $request (duok)->client(klasė)->name(savybė).
-25. Svarbu nesupainioty daugiskaitų su vienaskaitomis ir atsižvelgti kaip vienaskaitą laravel pats keičia į daugiskaitą ir kaip pats rašai.
+25. Svarbu nesupainioti daugiskaitų su vienaskaitomis ir atsižvelgti kaip vienaskaitą laravel pats keičia į daugiskaitą ir kaip pats rašai.
 26. Svarbu kad savybės, jeigu kopijuojamos užklausos iš kitų projektų, atitiktų lentelių stulpelius ir pavadinimus.
 27. Atlikti php artisan migrate:fresh pasitikrinti klaidas
 28. Controller'yje svarbu nesupainioti vienskaitos su daugiskaita, pvz., return view('companies.index',['companies' => $companies]);. Prieš index eina daugiskaita, taip kaip užvadintas views aplankalas modeliui. 
