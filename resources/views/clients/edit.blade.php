@@ -66,13 +66,13 @@
         <p>
         Company_ID: 
          <select class="form-control" name="client_company_id" value=''>
-                    <option class="text-secondary" value="{{$client->company_id}}">
+                     <option class="text-secondary" value="{{$client->company_id}}">
                         {{$client->company_id}}
-                    @for ($i = 1; $i < 251; $i++)
+                     @for ($i = 1; $i < 251; $i++)
                         
                         <option value="{{ $i }}">{{$i}}</option> 
                     
-                    @endfor
+                     @endfor
         
         </select>
         <p>          
