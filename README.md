@@ -79,6 +79,7 @@ Pvz.:  @foreach ($select_value as $value)
        @endforeach
 5. Tą patį for'ą įkeliame į Edit metodą, tik nepamirštam kad return'e neištrinti ['client' => $client] - turėjau klaidą, edit.blade nesuprato kintamojo $client.
 6. Tą patį foreach įkeliame į edit.blade select'ą. Gali kartotis kintamasis $select_values masyvas. nesikerta su create metodo kintamuoju.
+7. Dėmesio - perkeliant for'ą iš create į edit neiškreipti adresų - sugebėta client.create pakeist į client.edit, o edit/blade nerado kintamojo $client, nes jis paduodamas tik metode edit. 20 min nervų. 
 ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
 
 ********************************************* MODELIŲ SĄSAJOS KŪRIMAS *********************************************
@@ -88,7 +89,9 @@ Pvz.:  @foreach ($select_value as $value)
         //for ($i = 1; $i < 251; $i++) {
         //    $select_values[] = $i;
         //}
-3.
+3.Į Create metodą įrašome kintamajam $select_values = Company::all(); - paimame visą masyvą iš duomenų bazės lentelės Companies.
+4.Į edit.blade įnešame pakeitimą tik tokį, kad vietoj užvadinimo foreach tiesiog $value, panaudojame $company, t.y. nuorodą į objektų klasę/modelį.
+5.Išvedame klasės savybes: $company->id ir $company->name vietoj $value. 
 
 
 
