@@ -69,8 +69,9 @@
                      @foreach ($select_values as $company)
                       @if ($company->id == $client->company_id)
                         <option value="{{$company->id}} selected">{{$company->name}}</option>
+                      @else
+                        <option value="{{$company->id}}">{{$company->name}}</option>
                       @endif
-                      <option value="{{$company->id}}">{{$company->name}}</option>
                     @endforeach   
                      
         </select>
