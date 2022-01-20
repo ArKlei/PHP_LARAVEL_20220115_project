@@ -68,7 +68,7 @@
     <th>Name</th>
     <th>Surname</th>
     <th>Username</th>
-    <th>Company_ID</th>
+    <th>Company name</th>
     <th>Image address (url)</th>
 </tr>
 
@@ -79,7 +79,8 @@
         <td>{{$client->name}}</td>
         <td>{{$client->surname}}</td>
         <td>{{$client->username}}</td>
-        <td>{{$client->company_id}}</td>
+        <!--<td>{{$client->company_id}}</td>-->
+        <td>{{$client->clientCompany->name}}</td>
         <td>{{$client->image_url}}</td>
         <td>
             <a class="btn btn-primary" style="width:100px" href="{{route('client.edit', [$client])}}">Edit</a><p>
