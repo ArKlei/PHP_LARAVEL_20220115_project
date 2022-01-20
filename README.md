@@ -84,11 +84,11 @@ Pvz.:  @foreach ($select_value as $value)
 
 ********************************************* MODELIŲ SĄSAJOS KŪRIMAS *********************************************
 1. Kontroleryje ClientController prirašome "use App\Models\Company;"
-2. Užkomentuojam paprastą kintamajį ir for'ą jam užpildyti //$select_values = array();
-
-        //for ($i = 1; $i < 251; $i++) {
-        //    $select_values[] = $i;
-        //}
+2. Užkomentuojam paprastą kintamajį ir for'ą jam užpildyti 
+    //$select_values = array();
+    //for ($i = 1; $i < 251; $i++) {
+    //    $select_values[] = $i;
+    //}
 3.Į Create metodą įrašome kintamajam $select_values = Company::all(); - paimame visą masyvą iš duomenų bazės lentelės Companies.
 4.Į edit.blade įnešame pakeitimą tik tokį, kad vietoj užvadinimo foreach tiesiog $value, panaudojame $company, t.y. nuorodą į objektų klasę/modelį.
 5.Išvedame klasės savybes: $company->id ir $company->name vietoj $value. 
