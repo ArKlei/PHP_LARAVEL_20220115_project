@@ -71,10 +71,16 @@ Pvz.: <select class="form-control" name="client_company_id">
         for ($i = 1; $i < 251; $i++) {
             $select_values[] = $i;
         }
-4. Client>Create.blade.php 5statome foreach su sukurto reikšmių masyvo nuskaitymu.
+        +
+        Nepamiršti prie return pridėti reikšmių masyvo perdavimą "['select_values'=>$select_values]"
+4. Client>Create.blade.php įstatome foreach su sukurto reikšmių masyvo nuskaitymu.
 Pvz.:  @foreach ($select_value as $value)
                  <option value="{{ $value }}">{{$value}}</option>
-       @endforeach  
+       @endforeach
+5. Tą patį for'ą įkeliame į Edit metodą, tik nepamirštam kad return'e neištrinti ['client' => $client] - turėjau klaidą, edit.blade nesuprato kintamojo $client.
+6. Tą patį foreach įkeliame į edit.blade select'ą. Gali kartotis kintamasis $select_values masyvas. nesikerta su create metodo kintamuoju.
+ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
+
 
 
 
