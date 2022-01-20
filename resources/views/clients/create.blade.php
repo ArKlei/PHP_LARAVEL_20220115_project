@@ -68,9 +68,7 @@
             <select class="form-control" name="client_company_id">
                     <option value="0" class="text-secondary" style="grey">Company ID</option>
                     @for ($i = 1; $i < 251; $i++)
-                        
-                        <option value="{{ $i }}">{{$i}}</option> 
-                    
+                      <option value="{{ $i }}">{{$i}}</option> 
                     @endfor
                     
             </select>
