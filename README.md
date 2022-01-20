@@ -1,7 +1,7 @@
 # 20220115_project
  First step of complex project creation
 
-******************************************* CRUD kūrimas: **********************************************************************************************************************
+******************************************* CRUD kūrimas: **********************************************************************************
 1. Sukurti projektą: New Terminal>composer create-project laravel/laravel projekto_pavadinimas.
 2. Patikrinti ar viskas susikūrė, ar atsirado projektas + įkelti į github
 3. Įeiti į projektą per cd projekto_pavadinimas
@@ -48,7 +48,7 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 34. Sukurti show.blade.php vaizdus atvaizuoti konkrečius klientus ir kompanijas. Svarbu atkreipti dėmesį ar duomenų bazėje yra nors vienas įrašas, kitaip rodys 404.
 ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
 
-********************************************* SELECT OPTIONS SU PHP FOR ******************************************************************************************************
+********************************************* SELECT OPTIONS SU PHP FOR *******************************************************************
 
 1. Create.blade.php ir edit.blade.php sukurti select option's su for, bet mi6rain4s principu - sumaišant php ir html kodus - back-end dalį įterpiant į front-end'ą:
 Pvz.: Company_ID: 
