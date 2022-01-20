@@ -165,6 +165,23 @@ Pvz., return [
     }
  2. Metodo pavadinime koduojame one to many, Company yra on, Clients - many (daugiskaita).
  3. belongTo turi lentelė, kuri turi ryšio stulpelį, hasMany- kuri neturi.
+ 4. Companies show.blade.php faile įkėlėme foreach masyvui atvziduoti:
+ <table class="table table-stripped">
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>surname</td>
+            <td>Image</td>
+          </tr>
+          @foreach ($company->companyClients as $client)
+          <tr>
+            <td>{{$client->id}}</td>
+            <td>{{$client->name}}</td>
+            <td>{{$client->surname}}</td>
+            <td>{{$client->image_url}}</td>
+          </tr>
+          @endforeach
+        </table>
  
 
 
