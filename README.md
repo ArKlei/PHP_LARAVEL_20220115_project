@@ -72,14 +72,14 @@ Pvz.: <select class="form-control" name="client_company_id">
             $select_values[] = $i;
         }
         +
-        Nepamiršti prie return pridėti reikšmių masyvo perdavimą "['select_values'=>$select_values]"
-4. Client>Create.blade.php įstatome foreach su sukurto reikšmių masyvo nuskaitymu.
+        Nepamiršti prie return pridėti reikšmių masyvo perdavimą "['select_values'=>$select_values]" - "return view('clients.create',['select_values'=>$select_values]);"
+4. Client>Create.blade.php faile įstatome foreach su sukurto reikšmių masyvo nuskaitymu.
 Pvz.:  @foreach ($select_value as $value)
                  <option value="{{ $value }}">{{$value}}</option>
        @endforeach
-5. Tą patį for'ą įkeliame į Edit metodą, tik nepamirštam kad return'e neištrinti ['client' => $client] - turėjau klaidą, edit.blade nesuprato kintamojo $client.
-6. Tą patį foreach įkeliame į edit.blade select'ą. Gali kartotis kintamasis $select_values masyvas. nesikerta su create metodo kintamuoju.
-7. Dėmesio - perkeliant for'ą iš create į edit neiškreipti adresų - sugebėta client.create pakeist į client.edit, o edit/blade nerado kintamojo $client, nes jis paduodamas tik metode edit. 20 min nervų. 
+5. Tą patį for'ą įkeliame į Edit metodą, tik nepamirštam kad return'e neištrinti ['client' => $client] - turėjau klaidą, tai edit.blade.php nesuprato kintamojo $client, nes jis create metode nepaduodamas.
+6. Tą patį foreach įkeliame į edit.blade.php failo select'ą. Gali kartotis kintamasis $select_values masyvas. Nesikerta su create metodo kontroleryje ir create.blade.php kintamuoju (skirtingi adresai-route apsaugo).
+7. Dėmesio - perkeliant for'ą iš create į edit neiškreipti adresų - sugebėta client.create pakeist į client.edit, o edit.blade.php nerado kintamojo $client, nes jis paduodamas tik metode edit. 20 min nervų :) 
 ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
 
 ********************************************* MODELIŲ SĄSAJOS KŪRIMAS *********************************************
@@ -90,8 +90,9 @@ Pvz.:  @foreach ($select_value as $value)
     //    $select_values[] = $i;
     //}
 3.Į Create metodą įrašome kintamajam $select_values = Company::all(); - paimame visą masyvą iš duomenų bazės lentelės Companies.
-4.Į edit.blade įnešame pakeitimą tik tokį, kad vietoj užvadinimo foreach tiesiog $value, panaudojame $company, t.y. nuorodą į objektų klasę/modelį.
-5.Išvedame klasės savybes: $company->id ir $company->name vietoj $value. 
+4.Į edit.blade.php failą įnešame pakeitimą tik tokį, kad vietoj užvadinimo foreach tiesiog $value, panaudojame $company, t.y. nuorodą į objektų klasę/modelį ir paimtą visą duomenų masyvą.
+5.Išvedame klasės savybes: $company->id ir $company->name vietoj $value, t.y. masyvo elementų id ir name reikšmes.
+
 
 
 
