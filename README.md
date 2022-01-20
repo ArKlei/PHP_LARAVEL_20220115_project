@@ -1,7 +1,7 @@
 # 20220115_project
  First step of complex project creation
 
-******************************************* CRUD kūrimas: **********************************************************************************
+********************************************* CRUD kūrimas: *********************************************
 1. Sukurti projektą: New Terminal>composer create-project laravel/laravel projekto_pavadinimas.
 2. Patikrinti ar viskas susikūrė, ar atsirado projektas + įkelti į github
 3. Įeiti į projektą per cd projekto_pavadinimas
@@ -48,7 +48,7 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 34. Sukurti show.blade.php vaizdus atvaizuoti konkrečius klientus ir kompanijas. Svarbu atkreipti dėmesį ar duomenų bazėje yra nors vienas įrašas, kitaip rodys 404.
 ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
 
-********************************************* SELECT OPTIONS SU PHP FOR *******************************************************************
+********************************************* SELECT OPTIONS SU PHP FOR *********************************************
 
 1. Create.blade.php ir edit.blade.php sukurti select option's su for, bet mi6rain4s principu - sumaišant php ir html kodus - back-end dalį įterpiant į front-end'ą:
 Pvz.: Company_ID: 
@@ -80,6 +80,15 @@ Pvz.:  @foreach ($select_value as $value)
 5. Tą patį for'ą įkeliame į Edit metodą, tik nepamirštam kad return'e neištrinti ['client' => $client] - turėjau klaidą, edit.blade nesuprato kintamojo $client.
 6. Tą patį foreach įkeliame į edit.blade select'ą. Gali kartotis kintamasis $select_values masyvas. nesikerta su create metodo kintamuoju.
 ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
+
+********************************************* MODELIŲ SĄSAJOS KŪRIMAS *********************************************
+1. Kontroleryje ClientController prirašome "use App\Models\Company;"
+2. Užkomentuojam paprastą kintamajį ir for'ą jam užpildyti //$select_values = array();
+
+        //for ($i = 1; $i < 251; $i++) {
+        //    $select_values[] = $i;
+        //}
+3.
 
 
 
