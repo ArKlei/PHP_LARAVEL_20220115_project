@@ -105,10 +105,42 @@ Pvz., return [
             'image_url' =>$this->faker->imageUrl()
 
         ];
- 3. Paleisti ClinetSeeder.php dokumentą.
- 4. Metode run, įrašyti komandą klasei Client paleisk factory, sukurk 30 objektų, sukurk - Client::factory()->count(30)->create();
- 5. Neįsirašo viršuje automatiškai modelis, tad rankiniu būdu įrašyti use App\Models\Client;
- 6.  
+ 3. Paleisti ClientSeeder.php dokumentą.
+ 4. Metode run, įrašyti komandą klasei Client paleisk factory, sukurk 30 objektų, sukurk - 
+    Client::factory()->count(30)->create();
+ 6. Neįsirašo viršuje automatiškai modelis, tad rankiniu būdu įrašyti use App\Models\Client;
+ 7. DatabaseSeeder.php unikalus tuo, kad ten galima paleisti su "php artisan migrate:fresh --seed" ir bet koks migracinis pakeitimas įsirašys automatiškai į duomenų bazę.
+ 8. Įrašome tą patį use ir metodo run komandą į tas pačias vietas databaseSeeder.php faile.
+ 9. Termianle paleidžiame php artisan migrate:fresh --seed
+ 10. Patikrinti ar nėra klaidų ir duomenų bazės lentelėje pasižiūrėti ar susikūrė duomenys.
+ 11. Company klasei padaryti tą patį, Factory faile run metode: 
+ public function run()
+    {
+        'name' => $this->faker->company(),
+        'type' =>'Juridinis asmuo',
+        'description' =>$this->faker->paragraph(15)
+    }
+    ! svarbu faile 2022_01_15_080803_create_companies_table.php pakeisti duomenų tipą į tekstą: $table->text('description');, kitaip netilps paragraph(15) ir mes erorr'ą
+    
+ 12. Seeder faile nuorodą į modelį ir :
+ public function run()
+    {
+        Company::factory()->count(10)->create();
+    }
+ 13. DatabaseSeeder.php jau įrašoma:
+ public function run()
+    {
+        Client::factory()->count(30)->create(),
+        Company::factory()->count(10)->create()
+    }
+ 14. Veiks ir taip, bet užkomentuojam run DatabaseSeeder faile.
+ 15. Paleisim per call() funkciją, įrašydami 
+ $this->call([
+            ClientSeeder::class,
+            CompanySeeder::class
+ ]); t.y. yra DatabaseSeeder klase, paleisk metodą run, paleisk ClientSeeder ir CompanySeeder klases. Jos pasileidžia per Seeder failus, run metodus kreipiasi į Factory failus,    kur per run paleidžia tai ką reikia sukurti.
+ SVARBU: teisingi kableliai ir kabliataškiai.
+ ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU 
 
 
 
