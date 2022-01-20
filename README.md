@@ -94,6 +94,23 @@ Pvz.:  @foreach ($select_value as $value)
 5.Išvedame klasės savybes: $company->id ir $company->name vietoj $value, t.y. masyvo elementų id ir name reikšmes.
 6.Pakeičiame, kad select rodytų kompanijų pavadinimus, jeigu jų id sutampa su kliento company_id, naudojant if'ą ir else (rodyti kompanijos id, jeigu id nesutampa - pvz. kompanijų pavadinimų mažiau, negu kliento company_id yra įvesta. Tada rodo pirmą pavadinimą iš sąrašo).
 
+********************************************* Factory gamyba *********************************************
+1. ClientFactory.php metode Definition turime sudaryti brėžinį, pagal kurį gaminsim klientus - jų duomenis.
+2. Ji gražina masyvą return [];, tad į vidų įrašome duomenų bazės klasės lentelės Clients stulpelių pavadinimus: name, surname, username, company_id, image_url.
+Pvz., return [
+            'name' => $this->faker->firstName(),
+            'surname' => $this->faker->lastName(),
+            'username' => $this->faker->userName(),
+            'company_id' => $this->faker->numberBetween(1,100),
+            'image_url' =>$this->faker->imageUrl()
+
+        ];
+ 3. Paleisti ClinetSeeder.php dokumentą.
+ 4. Metode run, įrašyti komandą klasei Client paleisk factory, sukurk 30 objektų, sukurk - Client::factory()->count(30)->create();
+ 5. Neįsirašo viršuje automatiškai modelis, tad rankiniu būdu įrašyti use App\Models\Client;
+ 6.  
+
+
 
 
 
