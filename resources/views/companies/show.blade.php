@@ -59,6 +59,22 @@
         <p>Name : {{$company->name}}</p>
         <p>Description : {{$company->description}}</p>
         <p>
+        <table class="table table-stripped">
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>surname</td>
+            <td>Image</td>
+          </tr>
+          @foreach ($company->companyClients as $client)
+          <tr>
+            <td>{{$client->id}}</td>
+            <td>{{$client->name}}</td>
+            <td>{{$client->surname}}</td>
+            <td>{{$client->image_url}}</td>
+          </tr>
+          @endforeach
+        </table>
         <form method="post" action='{{route('company.destroy', [$company])}}'>
             @csrf
             <button class="btn btn-danger" type="submit">Delete company from database</button>
