@@ -16,7 +16,7 @@ class CompanyFactory extends Factory
         return [
             'name' => $this->faker->company(),
             'type' =>'Juridinis asmuo',
-            'description' =>$this->faker->sentence(15)
+            'description' => $this->faker->paragraph(15),
         ];
     }
 }
