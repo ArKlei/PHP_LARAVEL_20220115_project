@@ -71,9 +71,10 @@ Pvz.: <select class="form-control" name="client_company_id">
         for ($i = 1; $i < 251; $i++) {
             $select_values[] = $i;
         }
-4. Client>Create.blade.php 5statome foreach su sukurto reikšmių masyvo nuskaitymu.Pvz.:  @foreach ($select_value as $value)
-                      <option value="{{ $value }}">{{$value}}</option>
-                    @endforeach  
+4. Client>Create.blade.php 5statome foreach su sukurto reikšmių masyvo nuskaitymu.
+Pvz.:  @foreach ($select_value as $value)
+                 <option value="{{ $value }}">{{$value}}</option>
+       @endforeach  
 
 
 
