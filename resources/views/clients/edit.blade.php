@@ -19,26 +19,21 @@
   color: white;
   border-radius: 0 5px 5px 0;
 }
-
 #mySidenav a:hover {
   left: 0;
 }
-
 #main {
   top: 20px;
   background-color: #04AA6D;
 }
-
 #create {
   top: 80px;
   background-color: #2196F3;
 }
-
 #company {
   top: 140px;
   background-color: #f44336;
 }
-
 #create_company {
   top: 200px;
   background-color: #555
@@ -73,7 +68,8 @@
                      @endfor-->
                      @foreach ($select_values as $value)
                       <option value="{{$value}}">{{$value}}</option>
-                    @endforeach
+                    @endforeach   
+                     
         </select>
         <p>          
         Image address (url): 
