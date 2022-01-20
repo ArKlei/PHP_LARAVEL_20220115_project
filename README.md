@@ -92,6 +92,7 @@ Pvz.:  @foreach ($select_value as $value)
 3.Į Create metodą įrašome kintamajam $select_values = Company::all(); - paimame visą masyvą iš duomenų bazės lentelės Companies.
 4.Į edit.blade.php failą įnešame pakeitimą tik tokį, kad vietoj užvadinimo foreach tiesiog $value, panaudojame $company, t.y. nuorodą į objektų klasę/modelį ir paimtą visą duomenų masyvą.
 5.Išvedame klasės savybes: $company->id ir $company->name vietoj $value, t.y. masyvo elementų id ir name reikšmes.
+6.Pakeičiame, kad select rodytų kompanijų pavadinimus, jeigu jų id sutampa su kliento company_id, naudojant if'ą ir else (rodyti kompanijos id, jeigu id nesutampa - pvz. kompanijų pavadinimų mažiau, negu kliento company_id yra įvesta).
 
 
 
