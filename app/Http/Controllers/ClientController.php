@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Company;
 use App\Http\Requests\StoreClientRequest;
 use App\Http\Requests\UpdateClientRequest;
 
@@ -83,11 +84,12 @@ class ClientController extends Controller
         // $client = 1
         // $client = {id: 1, name: ..., surname: ...}
 
-        $select_values = array();
+        $select_values = Company::all();
 
-        for ($i = 1; $i < 251; $i++) {
-            $select_values[] = $i;
-        }
+        //$select_values = Array();
+        //for ($i = 1; $i < 251; $i++) {
+        //    $select_values[] = $i;
+        //}
         
         return view('clients.edit',['client' => $client],['select_values'=>$select_values]);
         
