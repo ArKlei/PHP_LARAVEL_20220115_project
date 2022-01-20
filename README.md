@@ -1,7 +1,7 @@
 # 20220115_project
  First step of complex project creation
 
-CRUD kūrimas:
+******************************************* CRUD kūrimas: **********************************************************************************
 1. Sukurti projektą: New Terminal>composer create-project laravel/laravel projekto_pavadinimas.
 2. Patikrinti ar viskas susikūrė, ar atsirado projektas + įkelti į github
 3. Įeiti į projektą per cd projekto_pavadinimas
@@ -48,6 +48,33 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 34. Sukurti show.blade.php vaizdus atvaizuoti konkrečius klientus ir kompanijas. Svarbu atkreipti dėmesį ar duomenų bazėje yra nors vienas įrašas, kitaip rodys 404.
 ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
 
+********************************************* SELECT OPTIONS SU PHP FOR *******************************************************************
+
+1. Create.blade.php ir edit.blade.php sukurti select option's su for, bet mi6rain4s principu - sumaišant php ir html kodus - back-end dalį įterpiant į front-end'ą:
+Pvz.: Company_ID: 
+       <select class="form-control" name="client_company_id" value=''>
+               <option class="text-secondary" value="{{$client->company_id}}">
+                        {{$client->company_id}}
+                     @for ($i = 1; $i < 251; $i++)
+                        <option value="{{ $i }}">{{$i}}</option> 
+                     @endfor
+      </select>
+Pvz.: <select class="form-control" name="client_company_id">
+               <option value="0" class="text-secondary" style="grey">Company ID</option>
+                    @for ($i = 1; $i < 251; $i++)
+                      <option value="{{ $i }}">{{$i}}</option> 
+                    @endfor
+      </select>
+2. Užkomentinam tai, nes nėra gera praktika.
+3. Į kontrolerį ClientController, Create metodą perkeliam for'ą. Prieš tai sukurdami kintamąjį - masyvą, į kurį talpinsime reikšmes iš for'o - $i.
+   Pvz.: $select_values = array();
+        for ($i = 1; $i < 251; $i++) {
+            $select_values[] = $i;
+        }
+4. Client>Create.blade.php 5statome foreach su sukurto reikšmių masyvo nuskaitymu.
+Pvz.:  @foreach ($select_value as $value)
+                 <option value="{{ $value }}">{{$value}}</option>
+       @endforeach  
 
 
 
