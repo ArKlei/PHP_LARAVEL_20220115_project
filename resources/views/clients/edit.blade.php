@@ -61,12 +61,15 @@
         <p>
         Company_ID: 
          <select class="form-control" name="client_company_id" value=''>
-                     <option class="text-secondary" value="{{$client->company_id}}">
+                     <!--<option class="text-secondary" value="{{$client->company_id}}">
                         {{$client->company_id}}</option>; 
-                     <!--@for ($i = 1; $i < 251; $i++)
+                     @for ($i = 1; $i < 251; $i++)
                         <option value="{{ $i }}">{{$i}}</option> 
                      @endfor-->
                      @foreach ($select_values as $company)
+                      @if ($company->id == $client->company_id)
+                        <option value="{{$company->id}} selected">{{$company->name}}</option>
+                      @endif
                       <option value="{{$company->id}}">{{$company->name}}</option>
                     @endforeach   
                      
