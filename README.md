@@ -50,7 +50,7 @@ norimomis lentelėmis kaip objekto savybių rinkiniu, nurodant duomenų tipą ir
 
 ********************************************* SELECT OPTIONS SU PHP FOR *********************************************
 
-1. Create.blade.php ir edit.blade.php sukurti select option's su for, bet mi6rain4s principu - sumaišant php ir html kodus - back-end dalį įterpiant į front-end'ą:
+1. Create.blade.php ir edit.blade.php sukurti select option's su for, bet mišrainės principu - sumaišant php ir html kodus - back-end dalį įterpiant į front-end'ą:
 Pvz.: Company_ID: 
        <select class="form-control" name="client_company_id" value=''>
                <option class="text-secondary" value="{{$client->company_id}}">
