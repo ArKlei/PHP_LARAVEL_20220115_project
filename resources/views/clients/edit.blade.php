@@ -67,10 +67,13 @@
         Company_ID: 
          <select class="form-control" name="client_company_id" value=''>
                      <option class="text-secondary" value="{{$client->company_id}}">
-                        {{$client->company_id}}
+                        {{$client->company_id}}</option>; 
                      <!--@for ($i = 1; $i < 251; $i++)
                         <option value="{{ $i }}">{{$i}}</option> 
                      @endfor-->
+                     @foreach ($select_values as $value)
+                      <option value="{{$value}}">{{$value}}</option>
+                    @endforeach
         </select>
         <p>          
         Image address (url): 

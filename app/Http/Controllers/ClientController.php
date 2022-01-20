@@ -35,8 +35,7 @@ class ClientController extends Controller
             $select_values[] = $i;
         }
         
-
-        return view('clients.create', ['select_values'=>$select_values]);
+        return view('clients.edit',['select_values'=>$select_values]);
 
     }
 
@@ -83,8 +82,15 @@ class ClientController extends Controller
     {   
         // $client = 1
         // $client = {id: 1, name: ..., surname: ...}
-        return view('clients.edit',['client' => $client]);
 
+        $select_values = array();
+
+        for ($i = 1; $i < 251; $i++) {
+            $select_values[] = $i;
+        }
+        
+        return view('clients.edit', ['client' => $client],['select_values'=>$select_values]);
+        
     }
 
     /**
