@@ -70,8 +70,8 @@
                     <!--@for ($i = 1; $i < 251; $i++)
                       <option value="{{ $i }}">{{$i}}</option> 
                     @endfor-->
-                    @foreach ($select_value as $value)
-                      <option value="{{ $value }}">{{$value}}</option>
+                    @foreach ($select_values as $value)
+                      <option value="{{$value}}">{{$value}}</option>
                     @endforeach      
             </select>
             <p>

@@ -36,7 +36,7 @@ class ClientController extends Controller
         }
         
 
-        return view('clients.create');
+        return view('clients.create', ['select_values'=>$select_values]);
 
     }
 
