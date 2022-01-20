@@ -141,7 +141,31 @@ Pvz., return [
  ]); t.y. yra DatabaseSeeder klase, paleisk metodą run, paleisk ClientSeeder ir CompanySeeder klases. Jos pasileidžia per Seeder failus, run metodus kreipiasi į Factory failus,    kur per run paleidžia tai ką reikia sukurti.
  SVARBU: teisingi kableliai ir kabliataškiai.
  ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU 
-
+ 
+ ********************************************* LENTELIŲ RYŠIO SUKŪRIMAS ********************************************* 
+ 1. 2022_01_15_080633_create_clients_table.php lentelėje užduodame Client lentelės stulpeliui company_id ryšį su kitos Company lentelės id stulpeliu
+   $table->foreign('company_id')->references('id')->on('companies');
+ 2. Svarbu pirma sukurti stulpelius, o tik poto kurti ryšius.
+ 3. Svarbu daugiskaita, nes modeli vienskaita, bet lentelės yra daugiskaita.
+ 4. Pakeisti migracijos client failo pavadinimą, kad taptų paskutinis - loginė seka. Bet nesumažinti simbolių kiekio pavadinime - laravel nematys migracijos.
+ 5. Gerai būtų kurti modelius ta seka, kuria ryšį kursime.
+ 6. Paleidžiame php artisan migrate:fresh ir tikriname klaidas
+ 7. PhPMyAdmin duomenų bazės info gale, Designer skiltyje patikriname ryšius.
+ 8. ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU 
+ 
+ ********************************************* KLIENTO KOMPANIJOS ATVAIZDAVIMAS - one to one *********************************************
+ 1. Jeigu norime atvaizduoti kompanijos pavadinimą klientui, tai kuriame modelyje Client metodą - public function clientCompany () {
+        return $this->belongsTo(Company::class, 'company_id','id');
+    }
+ 2. Klientų index.blade.php faile pakeičiame <!--<td>{{$client->company_id}}</td>--> į <td>{{$client->clientCompany->name}}</td>, su nuoroda į Companies lentelės stulpelį "name"
+ 3. Patikrinti ar veikia. Teko pakeisti atsitiktinio company_id generavimo metodą į rand(1,10), nes numberBeetween sukurdavo didesnius ID negu yra kompanijų ir metė erorrą.
+                                                        One to many
+ 1. Company modelyje įrašome metodą public function companyClients () {
+        return $this->hasMany(Client::class, 'company_id','id');
+    }
+ 2. Metodo pavadinime koduojame one to many, Company yra on, Clients - many (daugiskaita).
+ 3. belongTo turi lentelė, kuri turi ryšio stulpelį, hasMany- kuri neturi.
+ 
 
 
 
