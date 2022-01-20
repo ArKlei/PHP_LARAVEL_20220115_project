@@ -69,7 +69,10 @@
                     <option value="0" class="text-secondary" style="grey">Company ID</option>
                     <!--@for ($i = 1; $i < 251; $i++)
                       <option value="{{ $i }}">{{$i}}</option> 
-                    @endfor-->    
+                    @endfor-->
+                    @foreach ($select_value as $value)
+                      <option value="{{ $value }}">{{$value}}</option>
+                    @endforeach      
             </select>
             <p>
             <input  class="form-control" type='text' name="client_image_url" placeholder="Image address (url)"/>
