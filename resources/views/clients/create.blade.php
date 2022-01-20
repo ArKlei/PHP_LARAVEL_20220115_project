@@ -67,10 +67,9 @@
             <p>
             <select class="form-control" name="client_company_id">
                     <option value="0" class="text-secondary" style="grey">Company ID</option>
-                    @for ($i = 1; $i < 251; $i++)
+                    <!--@for ($i = 1; $i < 251; $i++)
                       <option value="{{ $i }}">{{$i}}</option> 
-                    @endfor
-                    
+                    @endfor-->    
             </select>
             <p>
             <input  class="form-control" type='text' name="client_image_url" placeholder="Image address (url)"/>
