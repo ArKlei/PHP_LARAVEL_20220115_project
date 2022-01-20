@@ -29,6 +29,13 @@ class ClientController extends Controller
      */
     public function create()
     {
+        $select_values = array();
+
+        for ($i = 1; $i < 251; $i++) {
+            $select_values[] = $i;
+        }
+        
+
         return view('clients.create');
 
     }
