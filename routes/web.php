@@ -61,3 +61,15 @@ Route::get('/', function () {
         Route::get('show/{company}', 'App\Http\Controllers\CompanyController@show')->name('company.show');
 
     });
+
+    Route::prefix('types')->group(function() {
+
+      Route::get('', 'App\Http\Controllers\TypeController@index')->name('type.index');
+      Route::get('create', 'App\Http\Controllers\TypeController@create')->name('type.create');
+      Route::post('store', 'App\Http\Controllers\TypeController@store' )->name('type.store');
+      Route::get('edit/{type}', 'App\Http\Controllers\TypeController@edit')->name('type.edit');
+      Route::post('update/{type}', 'App\Http\Controllers\TypeController@update')->name('type.update');
+      Route::post('destroy/{type}', 'App\Http\Controllers\TypeController@destroy' )->name('type.destroy');
+      Route::get('show/{type}', 'App\Http\Controllers\TypeController@show')->name('type.show');
+  
+  });

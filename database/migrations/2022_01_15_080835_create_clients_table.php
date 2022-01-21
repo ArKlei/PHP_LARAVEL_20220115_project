@@ -20,7 +20,7 @@ class CreateClientsTable extends Migration
             $table->string('surname');
             $table->string('username');
             $table->unsignedbigInteger('company_id');
-            $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('company_id')->references('id')->on();
             $table->string('image_url');
 
             $table->timestamps();
