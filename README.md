@@ -182,11 +182,21 @@ Pvz., return [
           </tr>
           @endforeach
         </table>
-   5. Sukurtas img src.
+   5. Clients show.blade.php sukurtas img src atvaizduoti klientų nuotraukas.
    6. Įkelta apsauga, jeigu kompanija neturėtų nei vieno kliento - išmestų atitinkamą pranešimą.
    @if(count($company->companyClients) == 0)
           <p>No Clients in this Company</p>
         @else
+    7.Companies show.blade.php sukurtas img src atvaizduoti kompanijos klientų nuotraukas.
+    8.Ir padaryta galimybė ištrinti klientą per delete:
+    <td>
+       <form method="post" action='{{route('client.destroy',[$client])}}''>
+       @csrf
+       <button class="btn btn-danger" type="submit">Delete</button>
+       </form>
+    </td>
+   ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU 
+        
  
 
 
