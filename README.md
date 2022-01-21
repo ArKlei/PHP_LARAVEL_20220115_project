@@ -182,6 +182,11 @@ Pvz., return [
           </tr>
           @endforeach
         </table>
+   5. Sukurtas img src.
+   6. Įkelta apsauga, jeigu kompanija neturėtų nei vieno kliento - išmestų atitinkamą pranešimą.
+   @if(count($company->companyClients) == 0)
+          <p>No Clients in this Company</p>
+        @else
  
 
 
