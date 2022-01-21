@@ -59,6 +59,10 @@
         <p>Name : {{$company->name}}</p>
         <p>Description : {{$company->description}}</p>
         <p>
+
+        @if(count($company->companyClients) == 0)
+          <p>No Clients in this Company</p>
+        @else
         <table class="table table-stripped">
           <tr>
             <td>ID</td>
@@ -75,6 +79,7 @@
           </tr>
           @endforeach
         </table>
+        @endif
         <form method="post" action='{{route('company.destroy', [$company])}}'>
             @csrf
             <button class="btn btn-danger" type="submit">Delete company from database</button>
