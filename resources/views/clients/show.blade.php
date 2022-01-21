@@ -59,7 +59,7 @@
         <p>Name : {{$client->name}}</p>
         <p>Surname : {{$client->surname}}</p>
         <p>Username : {{$client->username}}</p>
-        <p>Image : {{$client->image_url}}</p>
+        <p>Image :<br><img src="{{$client->image_url}}" style="width:150px; height:auto" alt="{{$client->name}}"></p>
         
         <p>
         <form method="post" action='{{route('client.destroy', [$client])}}'>
