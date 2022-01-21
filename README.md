@@ -278,6 +278,20 @@ Pvz., return [
         13. well done - ok
         14. Company index matome Type tuščią.
         
+        ********************************************* Naujos CRUD sukurimas ********************************************* 
+        1. Pirma kurti tipuas, redaguoti tipus, poto paredaguoti Companijos sukūrimą, poto Company redagavimą. 
+        2. Nukopijuotas Company aplankas
+        3. Routes>Web.php sukuriame dar vieną standartinių route grupę Type lentelei:
+        Route::prefix('types')->group(function() {
+           Route::get('', 'App\Http\Controllers\TypeController@index')->name('type.index');
+           Route::get('create', 'App\Http\Controllers\TypeController@create')->name('type.create');
+           Route::post('store', 'App\Http\Controllers\TypeController@store' )->name('type.store');
+           Route::get('edit/{type}', 'App\Http\Controllers\TypeController@edit')->name('type.edit');
+           Route::post('update/{type}', 'App\Http\Controllers\TypeController@update')->name('type.update');
+           Route::post('destroy/{type}', 'App\Http\Controllers\TypeController@destroy' )->name('type.destroy');
+           Route::get('show/{type}', 'App\Http\Controllers\TypeController@show')->name('type.show');
+        });
+        4.                    
                                       
     
             
