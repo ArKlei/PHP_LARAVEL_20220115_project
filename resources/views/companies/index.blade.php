@@ -62,6 +62,12 @@
         </div>   
     @endif
 
+    @if (session()->has('success_message'))
+        <div class="alert alert-success">
+            {{session()->get('success_message')}}
+        </div>   
+    @endif
+
 @if (count($companies) == 0)
     <p>There is no clients's and their companies in the database yet</p>
 @endif

@@ -115,7 +115,7 @@ class CompanyController extends Controller
         if(count($clients) != 0) {
             return redirect()->route('company.index')->with('error_message', 'Delete is not possible because company has clients');
         }
-         
+        
         
         $company->delete();
         return redirect()->route('company.index');
