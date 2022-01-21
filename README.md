@@ -274,7 +274,10 @@ Pvz., return [
             CompanySeeder::class,
             ClientSeeder::class
         ]);
-        12. 
+        12. po php artisan migrate:fresh --seed išmetė klaidą, nerado DB - teko įrašyti į Type seeder viršų biblioteką "use Illuminate\Support\Facades\DB;"
+        13. well done - ok
+        14. Company index matome Type tuščią.
+        
                                       
     
             
