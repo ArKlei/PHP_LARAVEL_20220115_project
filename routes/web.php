@@ -41,7 +41,7 @@ Route::get('/', function () {
   });
 
     //Objektų klasė Companies
-    Route::prefix('companies')->group(function() {
+  Route::prefix('companies')->group(function() {
   
         //Index. /companies
         Route::get('', 'App\Http\Controllers\CompanyController@index')->name('company.index');
@@ -60,9 +60,9 @@ Route::get('/', function () {
         //Show
         Route::get('show/{company}', 'App\Http\Controllers\CompanyController@show')->name('company.show');
 
-    });
+  });
 
-    Route::prefix('types')->group(function() {
+  Route::prefix('types')->group(function() {
 
       Route::get('', 'App\Http\Controllers\TypeController@index')->name('type.index');
       Route::get('create', 'App\Http\Controllers\TypeController@create')->name('type.create');
