@@ -195,7 +195,30 @@ Pvz., return [
        <button class="btn btn-danger" type="submit">Delete</button>
        </form>
     </td>
-   ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU 
+   ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
+    9. Įkelta apsauga neleisti ištrinti kompanijo jeigu ji turi klientų - į Company kontrolerį, metodą destroy
+      $clients = $company->companyClients; // clientu masyvas
+        if(count($clients) != 0) {
+            return redirect()->route('company.index')->with('error_message', 'Delete is not possible because company has clients');
+        }
+    10. Į Companies index.blade.php įkeliame sesijos eroor pranešimą apie bandymą ištrinti kompaniją, turinčią klientus
+    @if (session()->has('error_message'))
+        <div class="alert alert-danger">
+            {{session()->get('error_message')}}
+        </div>   
+    @endif
+                                            
+    11. įkeliame sesijos ir success message : 
+    @if (session()->has('success_message'))
+        <div class="alert alert-success">
+            {{session()->get('success_message')}}
+        </div>   
+    @endif 
+    ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
+                                                                                                                                 
+                                                                                                                                
+                                                                          
+  
         
  
 
