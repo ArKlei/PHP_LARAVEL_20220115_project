@@ -69,13 +69,19 @@
             <td>Name</td>
             <td>surname</td>
             <td>Image</td>
+            <td>Action</td>
           </tr>
           @foreach ($company->companyClients as $client)
           <tr>
             <td>{{$client->id}}</td>
             <td>{{$client->name}}</td>
             <td>{{$client->surname}}</td>
-            <td>{{$client->image_url}}</td>
+            <td><img src='{{$client->image_url}}' alt='{{$client->name}}' width="150" height="auto"/></td>
+            <td>
+                <form method="post" action='{{route('client.destroy',[$client])}}''>
+                @csrf
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </form></td>
           </tr>
           @endforeach
         </table>
