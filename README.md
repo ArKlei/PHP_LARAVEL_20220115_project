@@ -158,14 +158,14 @@ Pvz., return [
         return $this->belongsTo(Company::class, 'company_id','id');
     }
  2. Klientų index.blade.php faile pakeičiame <!--<td>{{$client->company_id}}</td>--> į <td>{{$client->clientCompany->name}}</td>, su nuoroda į Companies lentelės stulpelį "name"
- 3. Patikrinti ar veikia. Teko pakeisti atsitiktinio company_id generavimo metodą į rand(1,10), nes numberBeetween sukurdavo didesnius ID negu yra kompanijų ir metė erorrą.
+ 3. Patikrinti ar veikia. Teko pakeisti atsitiktinio company_id generavimo metodą į numberBetween(1,10), nes numberBeetween sukurdavo didesnius ID negu yra kompanijų ir metė erorrą.
                                                         One to many
  1. Company modelyje įrašome metodą public function companyClients () {
         return $this->hasMany(Client::class, 'company_id','id');
     }
  2. Metodo pavadinime koduojame one to many, Company yra on, Clients - many (daugiskaita).
  3. belongTo turi lentelė, kuri turi ryšio stulpelį, hasMany- kuri neturi.
- 4. Companies show.blade.php faile įkėlėme foreach masyvui atvziduoti:
+ 4. Companies show.blade.php faile įkėlėme foreach masyvui atvaizduoti:
  <table class="table table-stripped">
           <tr>
             <td>ID</td>
