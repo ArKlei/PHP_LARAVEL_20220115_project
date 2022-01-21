@@ -56,7 +56,11 @@
     <div class="container">
     <p><h1 style="text-align:center; font-size:50px; color:gold">Present clients represent companies</h1><p>
 
-
+    @if (session()->has('error_message'))
+        <div class="alert alert-danger">
+            {{session()->get('error_message')}}
+        </div>   
+    @endif
 
 @if (count($companies) == 0)
     <p>There is no clients's and their companies in the database yet</p>
