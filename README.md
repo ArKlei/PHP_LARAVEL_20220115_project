@@ -217,7 +217,67 @@ Pvz., return [
     ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
                                               
     ********************************************* 2022-01-21 *********************************************                                           
-                                                                                                                                 
+    1. Kuriame trečią modelį Type - lentelę klasei Type - kompanmijų tipaui atvaizduoti - su php artisan make:model Type --all
+    2. Tikrinam ar nėra klaidų, įsirašė Modelis, kontroleris, migracija, factory ir t.t.
+    3. Užpildom Type migracijos lentelę schema, kokios duomenų bazės lentelės stulpelių norime:
+       Schema::create('types', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('short_name');
+                $table->text('description');
+                $table->timestamps();
+        });
+    4. Pakeičiame Company migracijos stulpelių duomenų tipą "Type" iš teksto "string" į skaičius "unsignedBigInteger", nes bus skaičiai ryšiui su lentele Type.
+      $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('type_id'); // UAB, AB,
+            $table->foreign('type_id')->references('id')->on('types'); // ypač šį vieta, nes ryšys nurodytas jau su Type lentelės ID stulpeliu
+            $table->text('description');
+            $table->timestamps();
+    5. Paleidžiame php artisan migrate:fresh duomenų bazės lentelės Type sukurimui ir lentelės Company Type pakeitimui.
+    6. Aišku išmetė error, nes eiliškumas netinkamas: pirma Type, poto Company, o tik poto Client lentelė
+    7. Pervadinta Type migracija, viršuje, poto Company, gale Clients.
+    8. Vėl php artisan migrate:fresh ir nėra klaidų
+    9. Patikriname phpmyadmin per designer ar susidarė ryšys tarp Company ir Type, iš Type_id į Id stulpelius - ok
+    ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
+    
+    10.Type seeder faile run metode surašome rankiniu būdu 4 kompanijų tipų informaciją:
+    //name, short_name, description
+        //Mažoji bendrija, MB, ribota atsakomybė
+        //Uždaroji akcinė bendrovė, UAB, ribota atsakomybė
+        //Individuali įmonė, IĮ, neribota atsakomybė
+        //Akcinė bendrovė, AB, ribota atsakomybė
+        DB::table('types')->insert([
+            'name' => 'Mažoji bendrija',
+            'short_name' => 'MB',
+            'description' => 'ribota atsakomybė',
+        ]);
+        DB::table('types')->insert([
+            'name' => 'Uždaroji akcinė bendrovė',
+            'short_name' => 'UAB',
+            'description' => 'ribota atsakomybė',
+        ]);
+        DB::table('types')->insert([
+            'name' => 'Individuali įmonė',
+            'short_name' => 'IĮ',
+            'description' => 'neribota atsakomybė',
+        ]);
+        DB::table('types')->insert([
+            'name' => 'Akcinė bendrovė',
+            'short_name' => 'AB',
+            'description' => 'ribota atsakomybė',
+        ]);
+                                                
+        11. Atnaujinta Database seeder byla, prieš Comapny seeder įkeliant Type seeder - eiliškumas:
+        $this->call([
+            TypeSeeder::class,
+            CompanySeeder::class,
+            ClientSeeder::class
+        ]);
+        12. 
+                                      
+    
+            
                                                                                                                                 
                                                                           
   
