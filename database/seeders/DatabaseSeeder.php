@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         //Client::factory()->count(30)->create();
         //Company::factory()->count(10)->create();
         $this->call([
-            
+            TypeSeeder::class,
             CompanySeeder::class,
             ClientSeeder::class
         ]);
