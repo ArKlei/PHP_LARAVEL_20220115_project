@@ -21,7 +21,7 @@ class CompanyFactory extends Factory
             // description(string)
 
             'name' => $this->faker->company(),
-            'type_id' => $this->faker->numberBetween(1,4)
+            'type_id' => $this->faker->numberBetween(1,4),
             'description' => $this->faker->paragraph(15)
         ];
         
