@@ -15,7 +15,11 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        public function index()
+    {
+        $types = Type::all();
+        return view('type.index',['types'=>$types]);
+    }
     }
 
     /**
