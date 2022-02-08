@@ -30,11 +30,9 @@ class ClientController extends Controller
      */
     public function create()
     {
-        $select_values = array();
+        
 
-        for ($i = 1; $i < 251; $i++) {
-            $select_values[] = $i;
-        }
+        $select_values = Company::all();
         
         return view('clients.create',['select_values'=>$select_values]);
 
@@ -50,11 +48,11 @@ class ClientController extends Controller
     {
         $client = new Client;
 
-        $client->name = $request->client_name;
-        $client->surname = $request->client_surname;
-        $client->username = $request->client_username;
-        $client->company_id = $request->client_company_id;
-        $client->image_url = $request->client_image_url;
+        $client->name = $request->name;
+        $client->surname = $request->surname;
+        $client->username = $request->username;
+        $client->company_id = $request->company_id;
+        $client->image_url = $request->image_url;
         
         $client->save();
 
@@ -106,11 +104,11 @@ class ClientController extends Controller
     {
         //pasiimu is lauku, ir irasau i duomenu baze
 
-        $client->name = $request->client_name;
-        $client->surname = $request->client_surname;
-        $client->username = $request->client_username;
-        $client->company_id = $request->client_company_id;
-        $client->image_url = $request->client_image_url;
+        $client->name = $request->name;
+        $client->surname = $request->surname;
+        $client->username = $request->username;
+        $client->company_id = $request->company_id;
+        $client->image_url = $request->image_url;
 
         $client->save();//UPDATE
 

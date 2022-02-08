@@ -53,31 +53,27 @@
 
     <form method='POST' action='{{route('client.update', [$client])}}' >
         <p>
-        Name: <input class="form-control" type='text' name="client_name" value='{{$client->name}}'/>
+        Name: <input class="form-control" type='text' name="name" value='{{$client->name}}'/>
         <p>
-        Surname: <input class="form-control" type='text' name="client_surname" value='{{$client->surname}}'/>
+        Surname: <input class="form-control" type='text' name="surname" value='{{$client->surname}}'/>
         <p>
-        Username: <input class="form-control" type='text' name="client_username" value='{{$client->username}}'/>
+        Username: <input class="form-control" type='text' name="username" value='{{$client->username}}'/>
         <p>
         Company_ID: 
-         <select class="form-control" name="client_company_id" value=''>
-                     <!--<option class="text-secondary" value="{{$client->company_id}}">
-                        {{$client->company_id}}</option>; 
-                     @for ($i = 1; $i < 251; $i++)
-                        <option value="{{ $i }}">{{$i}}</option> 
-                     @endfor-->
+         <select class="form-control" name="company_id" value=''>
+                     
                      @foreach ($select_values as $company)
                       @if ($company->id == $client->company_id)
-                        <option value="{{$company->id}} selected">{{$company->name}}</option>
+                        <option value="{{$company->id}}" selected>{{$company->name}}</option>
                       @else
                         <option value="{{$company->id}}">{{$company->name}}</option>
                       @endif
                     @endforeach   
                      
         </select>
-        <p>          
+               
         Image address (url): 
-        <input class="form-control" type='text' name="client_image_url" value='{{$client->image_url}}'/>
+        <input class="form-control" type='text' name="image_url" value='{{$client->image_url}}'/>
         @csrf
         <p>
         <button class="btn btn-primary" style="width:100px" type='submit'>Update</button>

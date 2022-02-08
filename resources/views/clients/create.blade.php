@@ -54,23 +54,21 @@
 
         <form method='POST' action='{{route('client.store')}}'>
             <p>
-            <input class="form-control" type='text' name="client_name" placeholder="Client Name"/>
+            <input class="form-control" type='text' name="name" placeholder="Client Name"/>
             <p>
-            <input  class="form-control" type='text' name="client_surname" placeholder="Client Surname"/>
+            <input  class="form-control" type='text' name="surname" placeholder="Client Surname"/>
             <p>
-            <input  class="form-control" type='text' name="client_username" placeholder="Client Username"/>
+            <input  class="form-control" type='text' name="username" placeholder="Client Username"/>
             <p>
-            <select class="form-control" name="client_company_id">
-                    <option value="0" class="text-secondary" style="grey">Company ID</option>
-                    <!--@for ($i = 1; $i < 251; $i++)
-                      <option value="{{ $i }}">{{$i}}</option> 
-                    @endfor-->
-                    @foreach ($select_values as $value)
-                      <option value="{{$value}}">{{$value}}</option>
-                    @endforeach      
-            </select>
+            <select class="form-control" name="company_id" value=''>
+                     
+                     @foreach ($select_values as $company)
+                        <option value="{{$company->id}}">{{$company->name}}</option>
+                    @endforeach   
+                     
+        </select>
             <p>
-            <input  class="form-control" type='text' name="client_image_url" placeholder="Image address (url)"/>
+            <input  class="form-control" type='text' name="image_url" placeholder="Image address (url)"/>
             @csrf
             <p>
             <button class="btn btn-primary" style="width:100px" type='submit'>Add</button>

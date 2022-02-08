@@ -58,11 +58,11 @@
 
         <form method='POST' action='{{route('company.store')}}' >
 
-            <input class="form-control" type='text' name="company_name" placeholder="Company Name"/><p>
+            <input class="form-control" type='text' name="name" placeholder="Company Name"/><p>
             <p>
-            <input  class="form-control" type='text' name="company_type" placeholder="Company type (AB, UAB, MB)"/>
+            <input  class="form-control" type='text' name="type_id" placeholder="Company type (AB, UAB, MB)"/>
             <p>
-            <input  class="form-control" type='text' name="company_description" placeholder="Company description"/>
+            <input  class="form-control" type='text' name="description" placeholder="Company description"/>
             @csrf
             <p>
             <button class="btn btn-primary" style="width:100px" type='submit'>Add</button>

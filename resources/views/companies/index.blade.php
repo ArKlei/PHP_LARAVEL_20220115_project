@@ -77,7 +77,7 @@
 <tr>
     <th>Id</th>
     <th>Name</th>
-    <th>Type</th>
+    <th>Type ID</th>
     <th>Description</th>
 </tr>
 
@@ -86,7 +86,7 @@
     <tr>
         <td>{{$company->id}}</td>
         <td>{{$company->name}}</td>
-        <td>{{$company->type}}</td>
+        <td>{{$company->type_id}}</td>
         <td>{{$company->description}}</td>
         <td>
             <a class="btn btn-primary" style="width:100px" href="{{route('company.edit', [$company])}}">Edit</a><p>
