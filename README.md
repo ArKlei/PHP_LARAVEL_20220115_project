@@ -1,3 +1,34 @@
+2022-01-15 Laravel užduotis
+Due January 16, 2022 11:59 PM
+Instructions
+Susikurti naują Laravel projektą. Naudoti komandas:
+composer create-project laravel/laravel  projekto_pavadinimas
+Nueiti per terminalą į projekto aplanką. Komanda:
+cd projekto_pavadinimas
+Sukurti modelį Client. Rašyti būtinai vienaskaita. Struktūra:
+ID
+name(string)
+surname(string)
+username(string)
+company_id(bigInt)
+image_url(string)
+Sukurtį modelį Company.  Rašyti būtinai vienaskaita. Struktūra:
+ID
+name(string)
+type(string)
+description(string)
+Tiek Client, tiek Company sukurti kelius(routes), per kuriuos galima:
+Atvaizduoti visus klientus/kompanijas
+Pridėti naują klientą/kompaniją
+Redaguoti kiekvieną klientą/kompaniją
+I5trinti kiekvieną klientą/kompaniją
+Paspaudus ant kiekvieno kliento/kompanijos matyti informaciją.
+Papildomai:
+Jei neatlikote, integruoti Bootstrap biblioteką.
+Client kūrimo vaizde(create), company_id įvedimui sukurti <select>. Select reikšmės nuo 1 iki 250. Pasirinkta reikšmė turi įsirašyti į duomenų bazę.
+Client redagavimo vaizde(edit), company_id taip pat turi būti <select>. Turi automatiškai pasižymėti tokia reikšmė, kokia įrašyta duomenų bazėje
+
+
 # 20220115_project
  First step of complex project creation
 
