@@ -60,7 +60,13 @@
 
             <input class="form-control" type='text' name="name" placeholder="Company Name"/><p>
             <p>
-            <input  class="form-control" type='text' name="type_id" placeholder="Company type (AB, UAB, MB)"/>
+            <select class="form-control" name="type_id" value=''>
+                     
+                     @foreach ($select_values as $type)
+                        <option value="{{$type->id}}">{{$type->short_name}} - {{$type->name}}</option>
+                    @endforeach   
+                     
+        </select>
             <p>
             <input  class="form-control" type='text' name="description" placeholder="Company description"/>
             @csrf
